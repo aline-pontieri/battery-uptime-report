@@ -65,11 +65,15 @@ FROM daily_battery
 """
 
 
+START_OF_2026 = "2025-12-29"  # Monday of ISO week 1, 2026
+
+
 def parse_args():
     parser = argparse.ArgumentParser(description="Weekly battery uptime report")
-    parser.add_argument("--start", required=True, help="Start date (inclusive), e.g. 2026-03-30")
+    parser.add_argument("--start", default=START_OF_2026,
+                        help=f"Start date (inclusive). Defaults to {START_OF_2026} (ISO week 1 of 2026).")
     parser.add_argument("--end",   default=str(date.today() + timedelta(days=1)),
-                        help="End date (exclusive), e.g. 2026-05-14. Defaults to tomorrow.")
+                        help="End date (exclusive). Defaults to tomorrow.")
     return parser.parse_args()
 
 

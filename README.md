@@ -28,15 +28,14 @@ export AWS_DEFAULT_REGION=eu-central-1
 ## Usage
 
 ```bash
-# Previous month + current month (e.g. April + May 2026)
-# Start from the Monday of the first ISO week you want to cover
-python run.py --start 2026-03-30
+# Whole year 2026 up to today (run this every month)
+python run.py
 
-# Explicit date range
+# Custom date range
 python run.py --start 2026-03-30 --end 2026-05-14
 ```
 
-`--start` is inclusive, `--end` is exclusive (defaults to tomorrow).
+Both args are optional. `--start` defaults to `2025-12-29` (ISO week 1 of 2026), `--end` defaults to tomorrow.
 
 ## Output
 
