@@ -36,6 +36,7 @@ WITH ranked AS (
       AND powersource = 'BATTERY'
       AND lifecyclestatus IS NOT NULL
       AND lifecyclestatus <> 'terminated'
+      and partner = '682c625765fe4f7414285be0' -- InPost
 ),
 pre_filtered AS (
     SELECT *
